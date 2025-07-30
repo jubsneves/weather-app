@@ -100,8 +100,7 @@ body.container {
   color: #112d82;
 }
 .temperature-icon {
-  font-size: 40px;
-  margin-right: 10px;
+  width: 80px;
 }
 
 .weather--details {
