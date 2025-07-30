@@ -4,13 +4,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="src/style.css">
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <title>Weather App</title>
 </head>
 
-<body>
-    <h1>Hello World!</h1>
-
+<body class="container">
+    <main class="content">
+        <form class="search-form" id="search-form">
+            <input type="search" placeholder="Enter a city" class="search-input" id="search-form-input" required>
+            <button type="submit" class="search-button" id="search-form-button"></button>
+        </form>
+        <div class="header-app">
+            <div>
+                <h1 class="h1" id="city">Dublin</h1>
+                <h4 class="h4">
+                    <span class="city--day">Day</span>,
+                    <span class="city--time">00:00</span>
+                    <span class="temperature-info"></span>
+                </h4>
+            </div>
+            <div class="temperature-detail">
+                <span class="temperature-icon">☀️</span>
+                <span class="temperature"></span>
+            </div>
+        </div>
+        <div class="weather--details">
+            <div class="weather--detail">
+                <div class="weather--detail--container">
+                    <span class="icon-weather icon-weather--humidity"></span>
+                    <p>
+                        <strong class="humidity">-</strong><br>
+                        <span>humidity</span>
+                    </p>
+                </div>
+            </div>
+            <div class="weather--detail">
+                <div class="weather--detail--container">
+                    <span class="icon-weather icon-weather--wind"></span>
+                    <p>
+                        <strong class="wind">-</strong><br>
+                        <span>wind</span>
+                    </p>
+                </div>
+            </div>
+            <div class="weather--detail">
+                <div class="weather--detail--container">
+                    <span class="icon-weather icon-weather--feels-like"></span>
+                    <p>
+                        <strong class="feels-like">-</strong><br>
+                        <span>feels like</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="weather--next-days">
+            <div class="card">
+                <div class="icon--weather">🌤️</div>
+                <p class="day">Wed</p>
+                <div class="weather--next-days--details"><strong class="higher-temperature">20°</strong> | <span
+                        class="lower-temperature">12°</span></div>
+            </div>
+            <div class="card">
+                <div class="icon--weather">🌤️</div>
+                <p class="day">Wed</p>
+                <div class="weather--next-days--details"><strong class="higher-temperature">20°</strong> | <span
+                        class="lower-temperature">12°</span></div>
+            </div>
+            <div class="card">
+                <div class="icon--weather">🌤️</div>
+                <p class="day">Wed</p>
+                <div class="weather--next-days--details"><strong class="higher-temperature">20°</strong> | <span
+                        class="lower-temperature">12°</span></div>
+            </div>
+            <div class="card">
+                <div class="icon--weather">🌤️</div>
+                <p class="day">Wed</p>
+                <div class="weather--next-days--details"><strong class="higher-temperature">20°</strong> | <span
+                        class="lower-temperature">12°</span></div>
+            </div>
+            <div class="card">
+                <div class="icon--weather">🌤️</div>
+                <p class="day">Wed</p>
+                <div class="weather--next-days--details"><strong class="higher-temperature">20°</strong> | <span
+                        class="lower-temperature">12°</span></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>This project was coded by <a href="https://github.com/jubsneves" target="_blank">Juliana Neves</a>, is
+            open-sourced on <a href="https://github.com/jubsneves/weather-app" target="_blank">GitHub</a> and hosted
+            on
+            <a href="https://check-current-weather-app.netlify.app/" target="_blank">Netlify</a>
+        </p>
+    </footer>
     <script src="src/index.js"></script>
 </body>
 
