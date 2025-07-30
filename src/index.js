@@ -23,12 +23,13 @@ function refreshWeather(response) {
   windEl.innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
   temperatureInfo.innerHTML = `- ${response.data.condition.description}`;
   iconEl.innerHTML = `<img src="${response.data.condition.icon_url}" class="temperature-icon">`;
+  searchInput.value = "";
 }
 
 function formatDate(date) {
   let day = date.getDay();
-  let hour = date.getHours();
-  let minutes = date.getMinutes();
+  let hour = date.getHours().toString().padStart(2, "0");
+  let minutes = date.getMinutes().toString().padStart(2, "0");
   let days = [
     "Sunday",
     "Monday",
@@ -54,4 +55,28 @@ function handleSearchSubmit(e) {
   searchCity(city);
 }
 
+function displayForecast() {
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  let forecastHTML = "";
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="card">
+        <div class="icon-forecast">🌤️</div>
+        <p class="day">${day}</p>
+        <div class="weather--forecast--details"><strong class="higher-temperature">20°</strong> | <span
+        class="lower-temperature">12°</span>
+        </div>
+        </div>
+        `;
+  });
+
+  let forecastEl = document.querySelector("#forecast");
+  forecastEl.innerHTML = forecastHTML;
+}
+
 searchForm.addEventListener("submit", handleSearchSubmit);
+
+displayForecast();
